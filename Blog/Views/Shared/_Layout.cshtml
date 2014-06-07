@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="blog-masthead">
+        <div class="container">
+            <nav class="blog-nav">
+                @Html.ActionLink("Добавить топик", "Create", "Home", null, new { @class = "blog-nav-item" })
+                @Html.ActionLink("Админ", "Index", "Admin", null, new { @class = "blog-nav-item" })
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="blog-header">
+            <h1 class="blog-title">Blog</h1>
+            <p class="lead blog-description">Simple blog</p>
+        </div>
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+            @RenderBody()
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+            <div class="sidebar-module sidebar-module-inset">
+                <h4>About</h4>
+                <p>
+                    Etiam porta sem malesuada magna mollis euismod. 
+                    Cras mattis consectetur purus sit amet fermentum. 
+                    Aenean lacinia bibendum nulla sed consectetur.
+                </p>
+            </div>
+                <div class="sidebar-module">
+                    <ol class="list-unstyled">
+                        <h4>Navigation</h4>
+                        <li>@Html.ActionLink("Index", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Feedback", "Index", "Feedback")</li>
+                    </ol>
+                </div>
+        </div>
+    </div>
+
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    <script src="js/bootstrap.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

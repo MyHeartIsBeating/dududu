@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Blog.Models.Topic>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Index ADMIN</h2>
+
+@foreach (var topic in Model)
+{
+    <div class="blog-post">
+    @Html.DisplayFor(modelItem => topic.Title) <br />
+    @Html.DisplayFor(modelItem => topic.Body) <br />
+    @Html.DisplayFor(modelItem => topic.Created) <br />
+    @Html.ActionLink("Edit", "Edit", "Admin", new { id = topic.Id}, null) 
+    @Html.ActionLink("Delete", "Delete", "Admin", new { id = topic.Id}, null) 
+    </div>
+}

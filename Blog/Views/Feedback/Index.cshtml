@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Blog.Models.Feedback>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<form  method="post">
+    Name: <input type="type" name="Name" value=" " /> <br />
+    Your feedback: <textarea name="Body"></textarea> <br />
+    <input type="submit" name="Submit" value="Add Feedback" />
+</form>
+<hr />
+
+
+@foreach (var feed in Model)
+{
+    @feed.Name <br />
+    @feed.Body <br />
+    @feed.Created
+    <br />
+    <br />
+}
